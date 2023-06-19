@@ -1,0 +1,50 @@
+header .container{
+    width: 1200px;
+    margin: 0 auto;
+    height: 59px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+a{
+    text-decoration: none;
+    color: #242424;
+    font-size: 16px;
+}
+.logo img{
+    width: 150px;
+}
+.user img{
+    width: 45px;
+    height: 45px;
+    border-radius: 45px;
+}
+header{
+    box-shadow: 0 0 7px rgba(255, 140, 158, 0.1);
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+nav a{
+    position: relative;
+}
+nav a:after{
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: #FF79D0;
+    transition: width .5s;
+}
+nav a:hover:after {
+    content: "";
+    width: 100%;
+    left: 0;
+    background-color: #FF8C9E;
+}
