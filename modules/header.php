@@ -1,6 +1,7 @@
 <?php
 session_start();
 $_SESSION['user_id'] = 12;
+//unset($_SESSION['user_id']);
 
 if ($_SERVER['REQUEST_URI'] != './'){
     $url_home = "../";
@@ -10,10 +11,21 @@ else{
 }
 
 if (!empty($_SESSION['user_id'])){
-    $url_profile = './pages/profile.php?id='.$_SESSION['user_id'];
+    if ($_SERVER['REQUEST_URI'] != './'){
+        $url_profile = './pages/profile.php?id='.$_SESSION['user_id'];
+    }
+    else{
+        $url_profile = './profile.php?id='.$_SESSION['user_id'];
+    }
+
 }
 else{
-    $url_profile = './pages/login.php';
+    if ($_SERVER['REQUEST_URI'] != './') {
+        $url_profile = './pages/login.php';
+    }
+    else{
+        $url_profile = './login.php';
+    }
 }
 
 
