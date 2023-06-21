@@ -1,5 +1,9 @@
 <?php
 session_start();
+require "./php/db.php";
+
+//$result = select('select * from flowers',[]);
+//var_dump($result);
 ?>
 <!doctype html>
 <html lang="ru">

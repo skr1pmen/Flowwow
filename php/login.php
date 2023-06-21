@@ -9,6 +9,7 @@ $user = select('SELECT * FROM users WHERE login = :login', ['login' => $login]);
 if (!empty($user)){
     if (password_verify($password, $user[0]['password'])){
         $_SESSION['user_id'] = $user[0]['id'];
+        $_SESSION['is_admin'] = $user[0]['is_admin'];
         header("Location: ../pages/profile.php?id=".$user[0]['id']);
     } else {
         $_SESSION['error'] = 'Не правильный пароль!';

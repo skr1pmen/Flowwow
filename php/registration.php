@@ -30,5 +30,6 @@ else{
         ]
     );
     $_SESSION['user_id'] = $id;
+    $_SESSION['id_admin'] = false;
     header('Location: ../pages/profile.php?id=' . $id);
 }
