@@ -1,19 +1,15 @@
 <?php
-session_start();
-
 if ($_SERVER['REQUEST_URI'] != '/'){
     $url_home = "../";
     $url_flower = "../pages/flowers.php";
     $url_sweets = "../pages/sweets.php";
     $url_added = "../pages/add_products.php";
-    require '../php/db.php';
 }
 else{
     $url_home = './';
     $url_flower = './pages/flowers.php';
     $url_sweets = './pages/sweets.php';
     $url_added = './pages/add_products.php';
-    require './php/db.php';
 }
 
 if (!empty($_SESSION['user_id'])){
@@ -45,7 +41,7 @@ else{
             <a href="<?=$url_home?>">Главная</a>
             <a href="<?=$url_flower?>">Цветы</a>
             <a href="<?=$url_sweets?>">Сладости</a>
-            <?php if (!empty($_SESSION['is_admin'])): ?>
+            <?php if ($_SESSION['is_admin'] == 'true'): ?>
                 <a href="<?=$url_added?>">Добавить товар</a>
             <?php endif;?>
         </nav>

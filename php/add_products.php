@@ -9,7 +9,6 @@ $price = (int)$_POST['price'];
 $count = (int)$_POST['count'];
 $image_type = $_FILES['image']['type'];
 $image = file_get_contents($_FILES['image']['tmp_name']);
-
 if ($type == 'flowers'){
     insert(
         "INSERT INTO flowers (name, description, price, count, type, image) VALUES 

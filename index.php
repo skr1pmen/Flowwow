@@ -1,9 +1,8 @@
 <?php
 session_start();
-require "./php/db.php";
-
-//$result = select('select * from flowers',[]);
-//var_dump($result);
+include "./php/db.php";
+$flowers = select('select * from flowers ORDER BY RANDOM() LIMIT 9');
+$sweets = select('select * from sweets ORDER BY RANDOM() LIMIT 9');
 ?>
 <!doctype html>
 <html lang="ru">
@@ -27,138 +26,30 @@ require "./php/db.php";
                 <div class="title">Некоторые наши товары</div>
                 <div class="products_title">Цветы</div>
                 <div class="products">
-                    <div class="product">
-                        <img src="https://dostavka-tsvety.ru/wp-content/uploads/2020/09/1-6-1-39.jpg" alt="">
-                        <div class="product_title">Название</div>
-                        <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut consequatur consequuntur, delectus dolor expedita explicabo illo ipsam magni minima minus molestias numquam omnis optio perspiciatis provident quaerat quisquam, quos rerum ullam velit vitae, voluptates?</div>
-                        <span class="price">1500₽</span>
-                        <a class="btn-product" href="#">Подробнее</a>
-                    </div>
-                    <div class="product">
-                        <img src="https://dostavka-tsvety.ru/wp-content/uploads/2020/09/1-6-1-39.jpg" alt="">
-                        <div class="product_title">Название</div>
-                        <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut consequatur consequuntur, delectus dolor expedita explicabo illo ipsam magni minima minus molestias numquam omnis optio perspiciatis provident quaerat quisquam, quos rerum ullam velit vitae, voluptates?</div>
-                        <span class="price">1500₽</span>
-                        <a class="btn-product" href="#">Подробнее</a>
-                    </div>
-                    <div class="product">
-                        <img src="https://dostavka-tsvety.ru/wp-content/uploads/2020/09/1-6-1-39.jpg" alt="">
-                        <div class="product_title">Название</div>
-                        <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut consequatur consequuntur, delectus dolor expedita explicabo illo ipsam magni minima minus molestias numquam omnis optio perspiciatis provident quaerat quisquam, quos rerum ullam velit vitae, voluptates?</div>
-                        <span class="price">1500₽</span>
-                        <a class="btn-product" href="#">Подробнее</a>
-                    </div>
-                    <div class="product">
-                        <img src="https://dostavka-tsvety.ru/wp-content/uploads/2020/09/1-6-1-39.jpg" alt="">
-                        <div class="product_title">Название</div>
-                        <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut consequatur consequuntur, delectus dolor expedita explicabo illo ipsam magni minima minus molestias numquam omnis optio perspiciatis provident quaerat quisquam, quos rerum ullam velit vitae, voluptates?</div>
-                        <span class="price">1500₽</span>
-                        <a class="btn-product" href="#">Подробнее</a>
-                    </div>
-                    <div class="product">
-                        <img src="https://dostavka-tsvety.ru/wp-content/uploads/2020/09/1-6-1-39.jpg" alt="">
-                        <div class="product_title">Название</div>
-                        <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut consequatur consequuntur, delectus dolor expedita explicabo illo ipsam magni minima minus molestias numquam omnis optio perspiciatis provident quaerat quisquam, quos rerum ullam velit vitae, voluptates?</div>
-                        <span class="price">1500₽</span>
-                        <a class="btn-product" href="#">Подробнее</a>
-                    </div>
-                    <div class="product">
-                        <img src="https://dostavka-tsvety.ru/wp-content/uploads/2020/09/1-6-1-39.jpg" alt="">
-                        <div class="product_title">Название</div>
-                        <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut consequatur consequuntur, delectus dolor expedita explicabo illo ipsam magni minima minus molestias numquam omnis optio perspiciatis provident quaerat quisquam, quos rerum ullam velit vitae, voluptates?</div>
-                        <span class="price">1500₽</span>
-                        <a class="btn-product" href="#">Подробнее</a>
-                    </div>
-                    <div class="product">
-                        <img src="https://dostavka-tsvety.ru/wp-content/uploads/2020/09/1-6-1-39.jpg" alt="">
-                        <div class="product_title">Название</div>
-                        <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut consequatur consequuntur, delectus dolor expedita explicabo illo ipsam magni minima minus molestias numquam omnis optio perspiciatis provident quaerat quisquam, quos rerum ullam velit vitae, voluptates?</div>
-                        <span class="price">1500₽</span>
-                        <a class="btn-product" href="#">Подробнее</a>
-                    </div>
-                    <div class="product">
-                        <img src="https://dostavka-tsvety.ru/wp-content/uploads/2020/09/1-6-1-39.jpg" alt="">
-                        <div class="product_title">Название</div>
-                        <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut consequatur consequuntur, delectus dolor expedita explicabo illo ipsam magni minima minus molestias numquam omnis optio perspiciatis provident quaerat quisquam, quos rerum ullam velit vitae, voluptates?</div>
-                        <span class="price">1500₽</span>
-                        <a class="btn-product" href="#">Подробнее</a>
-                    </div>
-                    <div class="product">
-                        <img src="https://dostavka-tsvety.ru/wp-content/uploads/2020/09/1-6-1-39.jpg" alt="">
-                        <div class="product_title">Название</div>
-                        <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut consequatur consequuntur, delectus dolor expedita explicabo illo ipsam magni minima minus molestias numquam omnis optio perspiciatis provident quaerat quisquam, quos rerum ullam velit vitae, voluptates?</div>
-                        <span class="price">1500₽</span>
-                        <a class="btn-product" href="#">Подробнее</a>
-                    </div>
+                    <?php if (!empty($flowers)): foreach ($flowers as $flower):?>
+                            <div class="product">
+                                <img src="data:<?=$flower['type']?>;base64, <?=$flower['image']?>" alt="">
+                                <div class="product_title"><?= $flower['name'] ?></div>
+                                <div class="desc"><?= $flower['description'] ?></div>
+                                <span class="price"><?= $flower['price'] ?>₽</span>
+                                <a class="btn-product" href="./pages/flower.php?id=<?= $flower['id'] ?>">Подробнее</a>
+                            </div>
+                        <?php endforeach; endif; ?>
                     <a href="#" class="product last">
                         <span>Другие товары</span>
                     </a>
                 </div>
                 <div class="products_title">Сладости</div>
                 <div class="products">
-                    <div class="product">
-                        <img src="https://dostavka-tsvety.ru/wp-content/uploads/2020/09/1-6-1-39.jpg" alt="">
-                        <div class="product_title">Название</div>
-                        <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut consequatur consequuntur, delectus dolor expedita explicabo illo ipsam magni minima minus molestias numquam omnis optio perspiciatis provident quaerat quisquam, quos rerum ullam velit vitae, voluptates?</div>
-                        <span class="price">1500₽</span>
-                        <a class="btn-product" href="#">Подробнее</a>
-                    </div>
-                    <div class="product">
-                        <img src="https://dostavka-tsvety.ru/wp-content/uploads/2020/09/1-6-1-39.jpg" alt="">
-                        <div class="product_title">Название</div>
-                        <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut consequatur consequuntur, delectus dolor expedita explicabo illo ipsam magni minima minus molestias numquam omnis optio perspiciatis provident quaerat quisquam, quos rerum ullam velit vitae, voluptates?</div>
-                        <span class="price">1500₽</span>
-                        <a class="btn-product" href="#">Подробнее</a>
-                    </div>
-                    <div class="product">
-                        <img src="https://dostavka-tsvety.ru/wp-content/uploads/2020/09/1-6-1-39.jpg" alt="">
-                        <div class="product_title">Название</div>
-                        <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut consequatur consequuntur, delectus dolor expedita explicabo illo ipsam magni minima minus molestias numquam omnis optio perspiciatis provident quaerat quisquam, quos rerum ullam velit vitae, voluptates?</div>
-                        <span class="price">1500₽</span>
-                        <a class="btn-product" href="#">Подробнее</a>
-                    </div>
-                    <div class="product">
-                        <img src="https://dostavka-tsvety.ru/wp-content/uploads/2020/09/1-6-1-39.jpg" alt="">
-                        <div class="product_title">Название</div>
-                        <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut consequatur consequuntur, delectus dolor expedita explicabo illo ipsam magni minima minus molestias numquam omnis optio perspiciatis provident quaerat quisquam, quos rerum ullam velit vitae, voluptates?</div>
-                        <span class="price">1500₽</span>
-                        <a class="btn-product" href="#">Подробнее</a>
-                    </div>
-                    <div class="product">
-                        <img src="https://dostavka-tsvety.ru/wp-content/uploads/2020/09/1-6-1-39.jpg" alt="">
-                        <div class="product_title">Название</div>
-                        <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut consequatur consequuntur, delectus dolor expedita explicabo illo ipsam magni minima minus molestias numquam omnis optio perspiciatis provident quaerat quisquam, quos rerum ullam velit vitae, voluptates?</div>
-                        <span class="price">1500₽</span>
-                        <a class="btn-product" href="#">Подробнее</a>
-                    </div>
-                    <div class="product">
-                        <img src="https://dostavka-tsvety.ru/wp-content/uploads/2020/09/1-6-1-39.jpg" alt="">
-                        <div class="product_title">Название</div>
-                        <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut consequatur consequuntur, delectus dolor expedita explicabo illo ipsam magni minima minus molestias numquam omnis optio perspiciatis provident quaerat quisquam, quos rerum ullam velit vitae, voluptates?</div>
-                        <span class="price">1500₽</span>
-                        <a class="btn-product" href="#">Подробнее</a>
-                    </div>
-                    <div class="product">
-                        <img src="https://dostavka-tsvety.ru/wp-content/uploads/2020/09/1-6-1-39.jpg" alt="">
-                        <div class="product_title">Название</div>
-                        <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut consequatur consequuntur, delectus dolor expedita explicabo illo ipsam magni minima minus molestias numquam omnis optio perspiciatis provident quaerat quisquam, quos rerum ullam velit vitae, voluptates?</div>
-                        <span class="price">1500₽</span>
-                        <a class="btn-product" href="#">Подробнее</a>
-                    </div>
-                    <div class="product">
-                        <img src="https://dostavka-tsvety.ru/wp-content/uploads/2020/09/1-6-1-39.jpg" alt="">
-                        <div class="product_title">Название</div>
-                        <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut consequatur consequuntur, delectus dolor expedita explicabo illo ipsam magni minima minus molestias numquam omnis optio perspiciatis provident quaerat quisquam, quos rerum ullam velit vitae, voluptates?</div>
-                        <span class="price">1500₽</span>
-                        <a class="btn-product" href="#">Подробнее</a>
-                    </div>
-                    <div class="product">
-                        <img src="https://dostavka-tsvety.ru/wp-content/uploads/2020/09/1-6-1-39.jpg" alt="">
-                        <div class="product_title">Название</div>
-                        <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut consequatur consequuntur, delectus dolor expedita explicabo illo ipsam magni minima minus molestias numquam omnis optio perspiciatis provident quaerat quisquam, quos rerum ullam velit vitae, voluptates?</div>
-                        <span class="price">1500₽</span>
-                        <a class="btn-product" href="#">Подробнее</a>
-                    </div>
+                    <?php if (!empty($sweets)): foreach ($sweets as $sweet):?>
+                            <div class="product">
+                                <img src="data:<?=$sweet['type']?>;base64, <?=$sweet['image']?>" alt="">
+                                <div class="product_title"><?= $sweet['name'] ?></div>
+                                <div class="desc"><?= $sweet['description'] ?></div>
+                                <span class="price"><?= $sweet['price'] ?>₽</span>
+                                <a class="btn-product" href="./pages/sweet.php?id=<?= $sweet['id'] ?>">Подробнее</a>
+                            </div>
+                    <?php endforeach; endif; ?>
                     <a href="#" class="product last">
                         <span>Другие товары</span>
                     </a>
